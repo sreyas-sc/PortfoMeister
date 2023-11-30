@@ -69,6 +69,7 @@ import { faFacebook, faInstagram, faTwitter, faGithub, faLinkedin } from '@forta
 const PortFolioDesign = () => {
   // State for input values
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
   const [project, setProject] = useState('');
   const [about, setAbout] = useState('');
@@ -96,8 +97,9 @@ const PortFolioDesign = () => {
       <div className="page-container">
         {/* Left Section with Input Boxes */}
         <div className="left-section">
-          <h2>Input Section</h2>
+          <h2 style={{ color: '#ffff', fontFamily: 'Arial, sans-serif', fontStyle: 'italic', fontWeight: 'bold' }}>Input Section</h2>
           <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+          <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
           <textarea type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
           <textarea type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
           <textarea type="text" placeholder="Project" value={project} onChange={(e) => setProject(e.target.value)} />
@@ -146,6 +148,15 @@ const PortFolioDesign = () => {
                 onChange={(e) => setSocialLinks({ ...socialLinks, github: e.target.value })}
               />
             </div>
+            <div className="social-input">
+              <FontAwesomeIcon icon={faLinkedin} size="2x" />
+              <input
+                type="text"
+                placeholder="linkedin"
+                value={socialLinks.linkedin}
+                onChange={(e) => setSocialLinks({ ...socialLinks, linkedin: e.target.value })}
+              />
+            </div>
             
             {/* Repeat similar structure for other social links */}
           </div>
@@ -155,7 +166,7 @@ const PortFolioDesign = () => {
         {/* Right Section displaying Template1 */}
         <div className="right-section">
           <h2>Template Preview</h2>
-          <Template1 name={name} description={description} project={project} about={about} image={image} address={address} phone={phone}/>
+          <Template1 name={name} description={description} project={project} about={about} image={image} address={address} phone={phone} email={email}/>
         </div>
       </div>
     </div>

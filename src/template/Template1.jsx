@@ -2,13 +2,13 @@ import React from 'react';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import { FaBars, FaTimes, FaHome, FaPhone, FaMailBulk } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faTwitter, faGithub, faWhatsapp, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import resume from '../Assets/Sreyas_Official_Resume (1).pdf';
 import { Link } from 'react-router-dom';
 import "./Template1.scss";
 import { Phone } from '@material-ui/icons';
 
-const Template1 = ({ color, click, handleClick, name, description, project, about, address, phone  }) => {
+const Template1 = ({ color, click, handleClick, name, description, project, about, address, phone, email  }) => {
    
   return (
     <div>
@@ -58,7 +58,7 @@ const Template1 = ({ color, click, handleClick, name, description, project, abou
         <div className="components">
           <h1>PROJECTS</h1>
           <div>
-            <h1>ASTRAY</h1>
+            <h2>{project}</h2>
             <p>{project}</p>
             <p><a href=" ">Click Here!!! </a>to view project details</p>
           </div>
@@ -85,7 +85,7 @@ const Template1 = ({ color, click, handleClick, name, description, project, abou
             <div className="email">
               <h4>
                 <FaMailBulk size={20} style={{ color: '#fff', marginRight: '2rem' }} />
-                <a href="mailto:#mailid">portfomeister@gmail</a>
+                <a href="mailto:#mailid">{email}</a>
                 
               </h4>
             </div>
