@@ -77,6 +77,11 @@ const PortFolioDesign = () => {
   const [phone, setPhone] = useState(null);
   const [resume, setResume] = useState(null);
   const [address, setAddress] = useState(null);
+  const [facebooklink, setFaceBookLink] = useState(null);
+  const [instagramlink, setInstagramLink] = useState(null);
+  const [twitterlink, setTwitterLink] = useState(null);
+  const [githublink, setGitHubLink] = useState(null);
+  const [linkedinlink, setLinkedInLink] = useState(null);
   const [socialLinks, setSocialLinks] = useState({
     facebook: '',
     instagram: '',
@@ -108,54 +113,28 @@ const PortFolioDesign = () => {
           <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
           <input type="file" accept=".pdf" onChange={(e) => setResume(e.target.files[0])} />
 
-
           {/* Social Links */}
           <div className="social-links">
             <h4>Social Links</h4>
             <div className="social-input">
               <FontAwesomeIcon icon={faFacebook} size="2x" />
-              <input
-                type="text"
-                placeholder="Facebook"
-                value={socialLinks.facebook}
-                onChange={(e) => setSocialLinks({ ...socialLinks, facebook: e.target.value })}
-              />
+              <input type="text" placeholder="Facebook" value={facebooklink} onChange={(e) => setFaceBookLink(e.target.value )} />
             </div>
             <div className="social-input">
               <FontAwesomeIcon icon={faInstagram} size="2x" />
-              <input
-                type="text"
-                placeholder="Instagram"
-                value={socialLinks.instagram}
-                onChange={(e) => setSocialLinks({ ...socialLinks, instagram: e.target.value })}
-              />
+              <input type="text" placeholder="Instagram" value={instagramlink} onChange={(e) => setInstagramLink(e.target.value )} />
             </div>
             <div className="social-input">
               <FontAwesomeIcon icon={faTwitter} size="2x" />
-              <input
-                type="text"
-                placeholder="Twitter"
-                value={socialLinks.twitter}
-                onChange={(e) => setSocialLinks({ ...socialLinks, twitter: e.target.value })}
-              />
+              <input type="text" placeholder="Twitter" value={twitterlink} onChange={(e) => setTwitterLink(e.target.value )} />
             </div>
             <div className="social-input">
               <FontAwesomeIcon icon={faGithub} size="2x" />
-              <input
-                type="text"
-                placeholder="GitHub"
-                value={socialLinks.github}
-                onChange={(e) => setSocialLinks({ ...socialLinks, github: e.target.value })}
-              />
+              <input type="text" placeholder="GitHub" value={githublink} onChange={(e) => setGitHubLink(e.target.value )} />
             </div>
             <div className="social-input">
               <FontAwesomeIcon icon={faLinkedin} size="2x" />
-              <input
-                type="text"
-                placeholder="linkedin"
-                value={socialLinks.linkedin}
-                onChange={(e) => setSocialLinks({ ...socialLinks, linkedin: e.target.value })}
-              />
+              <input type="text" placeholder="LinkedIn" value={linkedinlink} onChange={(e) => setLinkedInLink(e.target.value )} />
             </div>
             
             {/* Repeat similar structure for other social links */}
@@ -166,7 +145,7 @@ const PortFolioDesign = () => {
         {/* Right Section displaying Template1 */}
         <div className="right-section">
           <h2>Template Preview</h2>
-          <Template1 name={name} description={description} project={project} about={about} image={image} address={address} phone={phone} email={email}/>
+          <Template1 name={name} description={description} project={project} about={about} image={image} address={address} phone={phone} email={email} facebooklink={facebooklink} instagramlink={instagramlink} twitterlink={twitterlink} githublink={githublink} linkedinlink={linkedinlink}/>
         </div>
       </div>
     </div>

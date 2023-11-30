@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import "./Template1.scss";
 import { Phone } from '@material-ui/icons';
 
-const Template1 = ({ color, click, handleClick, name, description, project, about, address, phone, email  }) => {
+const Template1 = ({ color, click, handleClick, name, description, project, about, address, phone, email, facebooklink, instagramlink, twitterlink, githublink, linkedinlink  }) => {
    
   return (
     <div>
@@ -28,9 +28,6 @@ const Template1 = ({ color, click, handleClick, name, description, project, abou
             <a href="#about">About</a>
           </li>
         </ul>
-        {/* <div className="hamburger" onClick={handleClick}>
-          {click ? <FaTimes size={20} style={{ color: '#ffff' }} /> : <FaBars size={20} style={{ color: '#ffff' }} />}
-        </div> */}
       </div>
       </div>
 
@@ -95,21 +92,21 @@ const Template1 = ({ color, click, handleClick, name, description, project, abou
             <h4>Connect With me on</h4>
 
             <div className="social-container">
-              <a href="#portfomeister" className="facebook social">
+              <Link to={facebooklink} className="facebook social">
                 <FontAwesomeIcon icon={faFacebook} size="2x" style={{ marginRight: '1rem' }} />
-              </a>
-              <a href='#portfomeister' className="instagram social">
+              </Link>
+              <Link to={instagramlink} className="instagram social">
                 <FontAwesomeIcon icon={faInstagram} size="2x" style={{ marginRight: '1rem' }} />
-              </a>
-              <a href="#portfomeister" className="twitter social">
+              </Link>
+              <Link to={twitterlink} className="twitter social">
                 <FontAwesomeIcon icon={faTwitter} size="2x" style={{ marginRight: '1rem' }} />
-              </a>
-              <a href="#portfomeister" className="github social">
+              </Link>
+              <Link to={githublink} className="github social">
                 <FontAwesomeIcon icon={faGithub} size="2x" style={{ marginRight: '1rem' }} />
-              </a>
-              <a href="#portfomeister" className="linkedin social">
+              </Link>
+              <Link to={linkedinlink} className="linkedin social">
                 <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ marginRight: '1rem' }} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
