@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Template1 from '../template/Template1'; // Adjust the path based on your file structure
 import './PortFolioDesign.scss'; 
 import Template2 from '../template/Template2';
+import Header from '../Header/Header';
 
 const PortFolioDesign = () => {
   // State for input values
@@ -22,12 +23,14 @@ const PortFolioDesign = () => {
   };
 
   return (
+    <div>
+    <Header/>
     <div className="page-container">
       {/* Left Section with Input Boxes */}
       <div className="left-section">
         <h2>Input Section</h2>
         <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-        <input type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
+        <textarea type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
         <textarea type="text" placeholder="Project" value={project} onChange={(e) => setProject(e.target.value)} />
         <input type="text" placeholder="About" value={about} onChange={(e) => setAbout(e.target.value)} />
         <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
@@ -39,6 +42,7 @@ const PortFolioDesign = () => {
         <h2>Template Preview</h2>
         <Template2 name={name} description={description} project={project} about={about} image={image} />
       </div>
+    </div>
     </div>
   );
 };

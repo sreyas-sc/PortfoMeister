@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import './Template2.scss';
 
 const Template2 = ({ name, description, project, about, image }) => {
@@ -13,28 +14,30 @@ const Template2 = ({ name, description, project, about, image }) => {
     <div className={`template2-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <header>
         <div className="header-content">
-          <h1>{name}</h1>
-          <p>{description}</p>
-          <button onClick={toggleDarkMode}>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</button>
+          {/* <a href="#home"> */}
+            <h1>{name}</h1>
+          {/* </a> */}
+          <div className="header-details">
+            <p>{description}</p>
+            <button onClick={toggleDarkMode}>
+              {isDarkMode ? (
+                <>
+                  <FontAwesomeIcon icon={faSun} />
+                </>
+              ) : (
+                <>
+                  <FontAwesomeIcon icon={faMoon} />
+                </>
+              )}
+            </button>
+          </div>
         </div>
         <nav>
-          <ul>
-            <li>
-              <ScrollLink to="home" smooth={true}>
-                Home
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink to="about" smooth={true}>
-                About
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink to="project" smooth={true}>
-                Project
-              </ScrollLink>
-            </li>
-          </ul>
+          <div className="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#project">Project</a>
+          </div>
         </nav>
       </header>
       <section id="home" className="home-section">
