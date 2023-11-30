@@ -62,10 +62,12 @@
 import React, { useState } from 'react';
 import Template1 from '../template/Template1';
 import Template2 from '../template/Template2';
+import Home from '../template/Template3';
 import './PortFolioDesign.scss'; 
 import Header from '../Header/Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 
 const PortFolioDesign = () => {
   // State for input values
@@ -94,7 +96,7 @@ const PortFolioDesign = () => {
   });
 
   const handleAddToSite = () => {
-    <Template2 name={name} description={description} project={project} about={about} image={image} address={address} />
+    <Template1 name={name} description={description} project={project} about={about} image={image} address={address} />
     // For now, let's pass only 'name'
     // <2 name={name} image={image} resume={resume} />;
     // Call a function or update state as needed
@@ -149,7 +151,7 @@ const PortFolioDesign = () => {
         {/* Right Section displaying Template1 */}
         <div className="right-section">
           <h2>Template Preview</h2>
-          <Template2 name={name} description={description} project={project} about={about} image={image} address={address} phone={phone} email={email} facebooklink={facebooklink} instagramlink={instagramlink} twitterlink={twitterlink} githublink={githublink} linkedinlink={linkedinlink}/>
+          <Template1 name={name} description={description} project={project} about={about} image={image} address={address} phone={phone} email={email} facebooklink={facebooklink} instagramlink={instagramlink} twitterlink={twitterlink} githublink={githublink} linkedinlink={linkedinlink}/>
         </div>
       </div>
     </div>
