@@ -42,7 +42,7 @@ const Template2 = ({ name, description, project, about, image }) => {
       </header>
       <section id="home" className="home-section">
         <div className="column left">
-          <h2>Home</h2>
+          <h2>{name}</h2>
           <p>{description}</p>
         </div>
         <div className="column right">
