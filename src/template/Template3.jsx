@@ -26,8 +26,9 @@ import { SiLinkedin } from "react-icons/si";
 import { BsYoutube } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import Logo from "../Assets/Logo.svg";
+import './Template3.scss';
 
-const Home = () => {
+const Template3 = () => {
   const workInfoData = [
     {
       image: PickMeals,
@@ -215,4 +216,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Template3;
