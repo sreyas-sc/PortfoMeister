@@ -6,8 +6,9 @@ import { faFacebook, faInstagram, faTwitter, faGithub, faWhatsapp, faLinkedin, f
 import resume from '../Assets/Sreyas_Official_Resume (1).pdf';
 import { Link } from 'react-router-dom';
 import "./Template1.scss";
+import { Phone } from '@material-ui/icons';
 
-const Template1 = ({ color, click, handleClick, name, description, project, about  }) => {
+const Template1 = ({ color, click, handleClick, name, description, project, about, address, phone  }) => {
    
   return (
     <div>
@@ -27,14 +28,16 @@ const Template1 = ({ color, click, handleClick, name, description, project, abou
             <a href="#about">About</a>
           </li>
         </ul>
-        <div className="hamburger" onClick={handleClick}>
+        {/* <div className="hamburger" onClick={handleClick}>
           {click ? <FaTimes size={20} style={{ color: '#ffff' }} /> : <FaBars size={20} style={{ color: '#ffff' }} />}
-        </div>
+        </div> */}
       </div>
       </div>
 
       <div id="hero" className="hero">
         <div className="content">
+        <h3 style={{ color: '#ffff', fontFamily: 'Arial, sans-serif', fontStyle: 'italic', fontWeight: 'bold' }}> Hey there I'm </h3>
+        <h1>{name}</h1>
         <p>{description}</p>
           <h1> </h1>
         </div>
@@ -69,14 +72,13 @@ const Template1 = ({ color, click, handleClick, name, description, project, abou
               <FaHome size={20} style={{ color: '#fff', marginRight: '2rem' }} />
               <div>
                 <p>{name}</p>
-                <p>Address1 </p>
-                <p>PORTFO ADDRESS</p>
+                <p>{address}</p>
               </div>
             </div>
             <div className="phone">
               <div>
                 <FaPhone size={20} style={{ color: '#fff', marginRight: '2rem' }} />
-                <a href="tel:#no">+91-987654123</a>
+                <a href="tel:#no">{phone}</a>
                 
               </div>
             </div>
@@ -90,8 +92,7 @@ const Template1 = ({ color, click, handleClick, name, description, project, abou
           </div>
 
           <div className="right">
-            <h4>About Me</h4>
-            <p>about  </p>
+            <h4>Connect With me on</h4>
 
             <div className="social-container">
               <a href="#portfomeister" className="facebook social">
@@ -106,14 +107,8 @@ const Template1 = ({ color, click, handleClick, name, description, project, abou
               <a href="#portfomeister" className="github social">
                 <FontAwesomeIcon icon={faGithub} size="2x" style={{ marginRight: '1rem' }} />
               </a>
-              <a href="#portfomeister" className="whatsapp social">
-                <FontAwesomeIcon icon={faWhatsapp} size="2x" style={{ marginRight: '1rem' }} />
-              </a>
               <a href="#portfomeister" className="linkedin social">
                 <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ marginRight: '1rem' }} />
-              </a>
-              <a href="#portfomeister" className="telegram social">
-                <FontAwesomeIcon icon={faTelegram} size="2x" style={{ marginRight: '1rem' }} />
               </a>
             </div>
           </div>

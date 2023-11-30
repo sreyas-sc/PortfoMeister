@@ -18,7 +18,7 @@ const Template2 = ({ name, description, project, about, image }) => {
             <h1>{name}</h1>
           {/* </a> */}
           <div className="header-details">
-            <p>{description}</p>
+            {/* <p>{description}</p> */}
             <button onClick={toggleDarkMode}>
               {isDarkMode ? (
                 <>
@@ -46,18 +46,21 @@ const Template2 = ({ name, description, project, about, image }) => {
           <p>{description}</p>
         </div>
         <div className="column right">
-          <img src={image && URL.createObjectURL(image)} alt="Home" />
+          <img src={image && URL.createObjectURL(image)} />
         </div>
       </section>
       <section id="about" className="about-section">
         <h2>About Me</h2>
         <p>{about}</p>
+        {/* <a className="btn" href={resume} target="_blank" rel="noreferrer">
+            My Resume
+          </a> */}
       </section>
       <section id="project" className="project-section">
         <h2>Projects</h2>
         <div className="project-item">
-          <h3>{project}</h3>
-          <p>{about}</p>
+          <h4>{project}</h4>
+          {/* <p>{about}</p> */}
         </div>
       </section>
       <footer>
