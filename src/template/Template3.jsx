@@ -70,15 +70,17 @@ const Template3 = () => {
   ];
 
   return (
+    
     <div className="combined-container">
       <nav>
         <div className="nav-logo-container">
           <img src={Logo} alt="" />
         </div>
         <div className="navbar-links-container">
-          <a href="">Home</a>
-          <a href="">About</a>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
           <a href="">Contact</a>
+          <a href="#work">Work</a>
           <button className="primary-button">Call And Book Now</button>
         </div>
         <div className="navbar-menu-container">
@@ -105,6 +107,7 @@ const Template3 = () => {
           </Box>
         </Drawer>
       </nav>
+      <section id="home" className="home-section">
       <div className="home-banner-container">
         <div className="home-bannerImage-container">
           <img src={BannerBackground} alt="" />
@@ -125,32 +128,36 @@ const Template3 = () => {
           <img src={BannerImage} alt="" />
         </div>
       </div>
+      </section>
 
       {/* About Section */}
-      <div className="about-section-container">
-        <div className="about-background-image-container">
-          <img src={AboutBackground} alt="" />
+      <section id="about" className="about-section">
+        <div className="about-section-container">
+          <div className="about-background-image-container">
+            <img src={AboutBackground} alt="" />
+          </div>
+          <div className="about-section-image-container">
+            <img src={AboutBackgroundImage} alt="" />
+          </div>
+          <div className="about-section-text-container">
+            <p className="primary-subheading">About</p>
+            <h1 className="primary-heading">
+              Food Is An Important Part Of A Balanced Diet
+            </h1>
+            <p className="primary-text">
+              Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
+              elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+            </p>
+            <p className="primary-text">
+              Non tincidunt magna non et elit. Dolor turpis molestie dui magnis
+              facilisis at fringilla quam.
+            </p>
+          </div>
         </div>
-        <div className="about-section-image-container">
-          <img src={AboutBackgroundImage} alt="" />
-        </div>
-        <div className="about-section-text-container">
-          <p className="primary-subheading">About</p>
-          <h1 className="primary-heading">
-            Food Is An Important Part Of A Balanced Diet
-          </h1>
-          <p className="primary-text">
-            Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-            elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
-          </p>
-          <p className="primary-text">
-            Non tincidunt magna non et elit. Dolor turpis molestie dui magnis
-            facilisis at fringilla quam.
-          </p>
-        </div>
-      </div>
+      </section>
 
       {/* Work Section */}
+      <section id="work" className="work-section">
       <div className="work-section-wrapper">
         <div className="work-section-top">
           <p className="primary-subheading">Work</p>
@@ -172,6 +179,7 @@ const Template3 = () => {
           ))}
         </div>
       </div>
+      </section>
 
       {/* Contact Section */}
       <div className="contact-page-wrapper">

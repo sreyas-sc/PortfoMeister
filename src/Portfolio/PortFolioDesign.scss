@@ -20,6 +20,9 @@ body {
     border-radius: 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
+    // overflow-x: auto; // This enables horizontal scrolling
+  // white-space: nowrap; // This prevents text from wrapping to the next line
+  
     background: linear-gradient(rgba(122, 89, 223, 0.349),rgba(122, 208, 107, 0.284)), url("https://wallpapercave.com/dwp2x/wp8991892.jpg")center;
   
     h2 {
