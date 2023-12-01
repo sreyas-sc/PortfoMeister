@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import './Template2.scss';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
-const Template2 = ({ name, description, project, about, image }) => {
+const Template2 = ({ name, description, project, about, image,facebooklink, instagramlink, twitterlink, githublink, linkedinlink, email  }) => {
   const [isDarkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -93,7 +96,27 @@ const Template2 = ({ name, description, project, about, image }) => {
         </div>
       </section>
       <footer>
-        <p>&copy; Portfomeister</p>
+      <p style={{ color: 'white', marginLeft: '0px' }}>{email}</p>
+        <p style={{ color: 'white', marginLeft: '340px' }}>&copy; Portfomeister</p>
+          <div className="right">
+            <div className="social-container">
+              <Link to={facebooklink} className="facebook social" style={{ color: '#1640D6', marginLeft: '90px' }}>
+                <FontAwesomeIcon icon={faFacebook} size="2x" style={{ marginRight: '1rem' }} />
+              </Link>
+              <Link to={instagramlink} className="instagram social" style={{ color: '#BE3144', marginLeft: '5px' }}>
+                <FontAwesomeIcon icon={faInstagram} size="2x" style={{ marginRight: '1rem' }} />
+              </Link>
+              <Link to={twitterlink} className="twitter social" style={{ color: '#1DA1F2', marginLeft: '5px' }}>
+                <FontAwesomeIcon icon={faTwitter} size="2x" style={{ marginRight: '1rem' }} />
+              </Link>
+              <Link to={githublink} className="github social" style={{ color: 'black', marginLeft: '5px' }}>
+                <FontAwesomeIcon icon={faGithub} size="2x" style={{ marginRight: '1rem' }} />
+              </Link>
+              <Link to={linkedinlink} className="linkedin social" style={{ color: '#0077b5', marginLeft: '5px' }}>
+                <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ marginRight: '1rem' }} />
+              </Link>
+            </div>
+          </div>
       </footer>
     </div>
   );

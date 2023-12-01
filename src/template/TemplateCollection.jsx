@@ -9,6 +9,7 @@ import template3Image from '../Assets/temp3.jpg';
 import template11Image from '../Assets/temp11.jpg';
 import template21Image from '../Assets/temp21.jpg';
 import template31Image from '../Assets/temp31.jpg';
+import template32Image from '../Assets/temp32.jpg';
 import template22Image from '../Assets/temp22.jpg';
 import Popup from '../popup/Popup'; 
 
@@ -35,6 +36,7 @@ function TemplateCollect() {
       name: 'Professional Portfolio Template',
       previewImage: template3Image,
       previewImage2: template31Image,
+      previewImage3:template32Image,
       details: 'Template for Professional use...',
     },
    
