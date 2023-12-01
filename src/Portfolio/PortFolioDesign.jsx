@@ -97,7 +97,7 @@ const PortFolioDesign = () => {
   });
 
   const handleAddToSite = () => {
-    <Template3 name={name} description={description} project={project} about={about} image={image} address={address} />
+    <Template2 name={name} description={description} project={project} about={about} image={image} address={address} />
     // For now, let's pass only 'name'
     // <2 name={name} image={image} resume={resume} />;
     // Call a function or update state as needed
@@ -152,7 +152,7 @@ const PortFolioDesign = () => {
         {/* Right Section displaying Template1 */}
         <div className="right-section">
           <h2>Template Preview</h2>
-          <Template3 name={name} description={description} project={project} about={about} image={image} address={address} phone={phone} email={email} facebooklink={facebooklink} instagramlink={instagramlink} twitterlink={twitterlink} githublink={githublink} linkedinlink={linkedinlink}/>
+          <Template2 name={name} description={description} project={project} about={about} image={image} address={address} phone={phone} email={email} facebooklink={facebooklink} instagramlink={instagramlink} twitterlink={twitterlink} githublink={githublink} linkedinlink={linkedinlink}/>
         </div>
       </div>
     </div>

@@ -23,12 +23,16 @@ import DeliveryMeals from "../Assets/delivery-image.png";
 import { FiArrowRight } from "react-icons/fi";
 import { BsTwitter } from "react-icons/bs";
 import { SiLinkedin } from "react-icons/si";
+import { FaInstagram } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import Logo from "../Assets/Logo.svg";
 import './Template3.scss';
+import { Link } from 'react-router-dom';
 
-const Template3 = () => {
+// const Template3 = () => {
+  const Template3 = ({ color, click, handleClick, name, description, project, about, address, phone, email, facebooklink, instagramlink, twitterlink, githublink, linkedinlink  }) => {
+
   const workInfoData = [
     {
       image: PickMeals,
@@ -73,8 +77,8 @@ const Template3 = () => {
     
     <div className="combined-container">
       <nav>
-        <div className="nav-logo-container">
-          <img src={Logo} alt="" />
+        <div className="nav-logo-container" style={{ color: 'orange', fontFamily: 'Your Chosen Font', fontSize: '2rem', margin: 0 }}>
+          <h1>{name}</h1>
         </div>
         <div className="navbar-links-container">
           <a href="#home">Home</a>
@@ -170,9 +174,9 @@ const Template3 = () => {
         <div className="work-section-bottom">
           {workInfoData.map((data) => (
             <div className="work-section-info" key={data.title}>
-              <div className="info-boxes-img-container">
+              {/* <div className="info-boxes-img-container">
                 <img src={data.image} alt="" />
-              </div>
+              </div> */}
               <h2>{data.title}</h2>
               <p>{data.text}</p>
             </div>
@@ -194,14 +198,22 @@ const Template3 = () => {
       {/* Footer Section */}
       <div className="footer-wrapper">
         <div className="footer-section-one">
-          <div className="footer-logo-container">
-            <img src={Logo} alt="" />
+          <div className="nav-logo-container" style={{ color: 'Grey', fontFamily: 'Shrikhand, cursive', fontSize: '1rem', margin: 0 }}>
+              <h1>{name}</h1>
           </div>
           <div className="footer-icons">
+            <Link to={twitterlink} className="twitter social">
             <BsTwitter />
+            </Link>
+            <Link to={linkedinlink} className="linkedin social">
             <SiLinkedin />
-            <BsYoutube />
+            </Link>
+            <Link to={facebooklink} className="facebook social">
             <FaFacebookF />
+            </Link>
+            <Link to={instagramlink} className="instagram social">
+            <FaInstagram />
+            </Link>
           </div>
         </div>
         <div className="footer-section-two">
@@ -211,12 +223,12 @@ const Template3 = () => {
             <span>Work</span>
           </div>
           <div className="footer-section-columns">
-            <span>244-5333-7783</span>
-            <span>contact@food.com</span>
+            <span>{phone}</span>
+            <span>{email}</span>
           </div>
           <div className="footer-section-columns">
-            <span>Terms & Conditions</span>
-            <span>Privacy Policy</span>
+            {/* <span>Terms & Conditions</span>
+            <span>Privacy Policy</span> */}
           </div>
         </div>
       </div>

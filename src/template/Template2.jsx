@@ -10,6 +10,23 @@ const Template2 = ({ name, description, project, about, image }) => {
     setDarkMode(!isDarkMode);
   };
 
+  const workInfoData = [
+    {
+      // image: PickMeals,
+      title: "Project 1",
+      text:
+        "Lorem ipsum dolor sit amet consectetur. Maecenas orci et sagittis duis elementum interdum facilisi bibendum.",
+        linktoproject:"click here to view the project"
+    },
+    {
+      // image: DeliveryMeals,
+      title: "Project 2",
+      text:
+        "Lorem ipsum dolor sit amet consectetur. Maecenas orci et lorem ipsum",
+      linktoproject:"click here to view the project"
+    },
+  ];
+
   return (
     <div className={`template2-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <header>
@@ -61,6 +78,18 @@ const Template2 = ({ name, description, project, about, image }) => {
         <div className="project-item">
           <h4>{project}</h4>
           {/* <p>{about}</p> */}
+        </div>
+        <div className="work-section-bottom">
+          {workInfoData.map((data) => (
+            <div className="work-section-info" key={data.title}>
+              {/* <div className="info-boxes-img-container">
+                <img src={data.image} alt="" />
+              </div> */}
+              <h2>{data.title}</h2>
+              <p>{data.text}</p>
+              <p>{data.linktoproject}</p>
+            </div>
+          ))}
         </div>
       </section>
       <footer>
