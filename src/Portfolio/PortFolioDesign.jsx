@@ -1,68 +1,8 @@
-// // Page.jsx
-// import React, { useState } from 'react';
-// import Template1 from '../template/Template1'; // Adjust the path based on your file structure
-// import './PortFolioDesign.scss'; 
-// import Template2 from '../template/Template2';
-// import Header from '../Header/Header';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faFacebook, faInstagram, faTwitter, faGithub, faWhatsapp, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons';
-
-// const PortFolioDesign = () => {
-//   // State for input values
-//   const [name, setName] = useState('');
-//   const [description, setDescription] = useState('');
-//   const [project, setProject] = useState('');
-//   const [about, setAbout] = useState('');
-//   const [image, setImage] = useState(null);
-//   const [resume, setResume] = useState(null);
-//   const [address, setAddress] =useState(null);
-
-//   const handleAddToSite = () => {
-
-//      <Template1 name={name} description={description} project={project} about={about} image={image} address={address} />
-
-//     // For now, let's pass only 'name'
-//     // <2 name={name} image={image} resume={resume} />;
-//   };
-
-//   return (
-//     <div>
-//     <Header/>
-//     <div className="page-container">
-//       {/* Left Section with Input Boxes */}
-//       <div className="left-section">
-//         <h2>Input Section</h2>
-//         <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-//         <textarea type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
-//         <textarea type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
-//         <textarea type="text" placeholder="Project" value={project} onChange={(e) => setProject(e.target.value)} />
-//         <input type="text" placeholder="About" value={about} onChange={(e) => setAbout(e.target.value)} />
-//         <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
-//         <input type="file" accept=".pdf" onChange={(e) => setResume(e.target.files[0])} />
-//         <button onClick={handleAddToSite}>Add to Site</button>
-//         <h4>Social Links</h4>
-        
-
-//       </div>
-//       {/* Right Section displaying Template1 */}
-//       <div className="right-section">
-//         <h2>Template Preview</h2>
-//         <Template1 name={name} description={description} project={project} about={about} image={image} address={address}/>
-//       </div>
-//     </div>
-//     </div>
-//   );
-// };
-
-// export default PortFolioDesign;
-
-
-
-// Page.jsx
 import React, { useState } from 'react';
 import Template1 from '../template/Template1';
 import Template2 from '../template/Template2';
 import Template3 from '../template/Template3';
+import Template4 from '../template/Template4';
 import Home from '../template/Template3';
 import './PortFolioDesign.scss'; 
 import Header from '../Header/Header';
@@ -97,7 +37,9 @@ const PortFolioDesign = () => {
   });
 
   const handleAddToSite = () => {
-    <Template2 name={name} description={description} project={project} about={about} image={image} address={address} />
+    <Template1 name={name} description={description} project={project} about={about} image={image} address={address} />
+    // <Template2 name={name} description={description} project={project} about={about} image={image} address={address} />
+
     // For now, let's pass only 'name'
     // <2 name={name} image={image} resume={resume} />;
     // Call a function or update state as needed
@@ -152,7 +94,7 @@ const PortFolioDesign = () => {
         {/* Right Section displaying Template1 */}
         <div className="right-section">
           <h2>Template Preview</h2>
-          <Template2 name={name} description={description} project={project} about={about} image={image} address={address} phone={phone} email={email} facebooklink={facebooklink} instagramlink={instagramlink} twitterlink={twitterlink} githublink={githublink} linkedinlink={linkedinlink}/>
+          <Template1 name={name} description={description} project={project} about={about} image={image} address={address} phone={phone} email={email} facebooklink={facebooklink} instagramlink={instagramlink} twitterlink={twitterlink} githublink={githublink} linkedinlink={linkedinlink}/>
         </div>
       </div>
     </div>

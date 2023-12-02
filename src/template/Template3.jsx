@@ -217,11 +217,11 @@ import { Link } from 'react-router-dom';
           </div>
         </div>
         <div className="footer-section-two">
-          <div className="footer-section-columns">
+          {/* <div className="footer-section-columns">
             <span>Help</span>
             <span>Share</span>
             <span>Work</span>
-          </div>
+          </div> */}
           <div className="footer-section-columns">
             <span>{phone}</span>
             <span>{email}</span>
