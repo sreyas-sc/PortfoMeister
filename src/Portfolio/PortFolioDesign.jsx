@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import Template1 from '../template/Template1';
 import Template2 from '../template/Template2';
 import Template3 from '../template/Template3';
 import Template4 from '../template/Template4';
-import Home from '../template/Template3';
 import './PortFolioDesign.scss'; 
 import Header from '../Header/Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-
+import { useLocation } from 'react-router-dom';
 
 const PortFolioDesign = () => {
-  // State for input values
+  const location = useLocation();
+  const { selectedTemplate } = location.state || {};
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
@@ -26,24 +27,39 @@ const PortFolioDesign = () => {
   const [twitterlink, setTwitterLink] = useState(null);
   const [githublink, setGitHubLink] = useState(null);
   const [linkedinlink, setLinkedInLink] = useState(null);
-  const [socialLinks, setSocialLinks] = useState({
-    facebook: '',
-    instagram: '',
-    twitter: '',
-    github: '',
-    whatsapp: '',
-    linkedin: '',
-    telegram: '',
-  });
 
-  const handleAddToSite = () => {
-    <Template1 name={name} description={description} project={project} about={about} image={image} address={address} />
-    // <Template2 name={name} description={description} project={project} about={about} image={image} address={address} />
 
-    // For now, let's pass only 'name'
-    // <2 name={name} image={image} resume={resume} />;
-    // Call a function or update state as needed
-  };
+  useEffect(() => {
+    // Update state values based on the selected template
+    if (selectedTemplate) {
+      setName(selectedTemplate.name);
+      
+    }
+  }, [selectedTemplate]);
+
+
+  useEffect(() => {
+    // Update state values based on the selected template
+    if (selectedTemplate) {
+      setName(selectedTemplate.name);
+      setEmail(selectedTemplate.email);
+      setDescription(selectedTemplate.description);
+      setProject(selectedTemplate.project);
+      setAbout(selectedTemplate.about);
+      setImage(selectedTemplate.image);
+      setPhone(selectedTemplate.phone);
+      setResume(selectedTemplate.resume);
+      setAddress(selectedTemplate.address);
+      setFaceBookLink(selectedTemplate.facebooklink);
+      setInstagramLink(selectedTemplate.instagramlink);
+      setTwitterLink(selectedTemplate.twitterlink);
+      setGitHubLink(selectedTemplate.githublink);
+      setLinkedInLink(selectedTemplate.linkedinlink);
+      // Update other states accordingly
+    }
+  }, [selectedTemplate]);
+
+
 
   return (
     <div>
@@ -89,12 +105,27 @@ const PortFolioDesign = () => {
             {/* Repeat similar structure for other social links */}
           </div>
 
-          <button onClick={handleAddToSite}>Add to Site</button>
+          <button >Add to Site</button>
         </div>
         {/* Right Section displaying Template1 */}
         <div className="right-section">
           <h2>Template Preview</h2>
-          <Template1 name={name} description={description} project={project} about={about} image={image} address={address} phone={phone} email={email} facebooklink={facebooklink} instagramlink={instagramlink} twitterlink={twitterlink} githublink={githublink} linkedinlink={linkedinlink}/>
+          {selectedTemplate && (
+            <>
+              {selectedTemplate.id === 1 && (
+                <Template1 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+              )}
+              {selectedTemplate.id === 2 && (
+                <Template3 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+              )}
+              {selectedTemplate.id === 3 && (
+                <Template2 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+              )}
+              {selectedTemplate.id === 4 && (
+                <Template4 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+              )}
+            </>
+          )}
         </div>
       </div>
     </div>
