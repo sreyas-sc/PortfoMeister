@@ -94,7 +94,7 @@ const Register = () => {
             <p>Create and showcase your professional portfolio with ease.</p>
             <span>Have an account?</span>
 
-            <NavLink to="/login">
+            <NavLink to="/">
               <button className="cta-button">Login</button>
             </NavLink>
           </div>

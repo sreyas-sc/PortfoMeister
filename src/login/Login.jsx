@@ -41,11 +41,13 @@
 
 
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Navigate, useNavigate } from 'react-router-dom';
 import './Login.scss';
 import { supabase } from '../client';
 
 const Login = () => {
+  let navigate = useNavigate() 
+
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -73,6 +75,7 @@ const Login = () => {
 
       if (error) throw error;
       console.log(data);
+      navigate('/home')
 
       // Redirect or perform other actions upon successful login
     } catch (error) {
@@ -100,7 +103,7 @@ const Login = () => {
               <input type="password" placeholder="Password" name="password" onChange={handleChange} />
               <br />
               <button type="submit" className="cta-button">
-                Login
+                Sign In
               </button>
             </form>
           </div>
