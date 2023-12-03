@@ -31,7 +31,7 @@ import './Template3.scss';
 import { Link } from 'react-router-dom';
 
 // const Template3 = () => {
-  const Template3 = ({ color, click, handleClick, name, description, project, about, address, phone, email, facebooklink, instagramlink, twitterlink, githublink, linkedinlink  }) => {
+  const Template3 = ({ temp2facebooklink, temp2instagramlink, temp2linkedinlink, temp2twitterlink, temp2name, temp2maindescription, temp2mainsummary, temp2contactlink, temp2aboutdescription, color, click, handleClick,temp2aboutheader, name, description, project, about, address, phone, email, facebooklink, instagramlink, twitterlink, githublink, linkedinlink  }) => {
 
   const workInfoData = [
     {
@@ -78,7 +78,7 @@ import { Link } from 'react-router-dom';
     <div className="combined-container">
       <nav>
         <div className="nav-logo-container" style={{ color: 'orange', fontFamily: 'Your Chosen Font', fontSize: '2rem', margin: 0 }}>
-          <h1>{name}</h1>
+          <h1>{temp2name}</h1>
         </div>
         <div className="navbar-links-container">
           <a href="#home">Home</a>
@@ -118,11 +118,13 @@ import { Link } from 'react-router-dom';
         </div>
         <div className="home-text-section">
           <h1 className="primary-heading">
-            Your Favourite Food Delivered Hot & Fresh
+            {temp2maindescription}
+            {/* Your Favourite Food Delivered Hot & Fresh */}
           </h1>
           <p className="primary-text">
-            Healthy switcher chefs do all the prep work, like peeding, chopping
-            & marinating, so you can cook a fresh food.
+            {temp2mainsummary}
+            {/* Healthy switcher chefs do all the prep work, like peeding, chopping
+            & marinating, so you can cook a fresh food. */}
           </p>
           <button className="secondary-button">
             Order Now <FiArrowRight />{" "}
@@ -146,15 +148,17 @@ import { Link } from 'react-router-dom';
           <div className="about-section-text-container">
             <p className="primary-subheading">About</p>
             <h1 className="primary-heading">
-              Food Is An Important Part Of A Balanced Diet
+              {temp2aboutheader}
+              {/* Food Is An Important Part Of A Balanced Diet */}
             </h1>
             <p className="primary-text">
-              Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-              elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+              {temp2aboutdescription}
+              {/* Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
+              elit. Dolor turpis molestie dui magnis facilisis at fringilla quam. */}
             </p>
             <p className="primary-text">
-              Non tincidunt magna non et elit. Dolor turpis molestie dui magnis
-              facilisis at fringilla quam.
+              {/* Non tincidunt magna non et elit. Dolor turpis molestie dui magnis
+              facilisis at fringilla quam. */}
             </p>
           </div>
         </div>
@@ -202,16 +206,16 @@ import { Link } from 'react-router-dom';
               <h1>{name}</h1>
           </div>
           <div className="footer-icons">
-            <Link to={twitterlink} className="twitter social">
+            <Link to={temp2twitterlink} className="twitter social">
             <BsTwitter />
             </Link>
-            <Link to={linkedinlink} className="linkedin social">
+            <Link to={temp2linkedinlink} className="linkedin social">
             <SiLinkedin />
             </Link>
-            <Link to={facebooklink} className="facebook social">
+            <Link to={temp2facebooklink} className="facebook social">
             <FaFacebookF />
             </Link>
-            <Link to={instagramlink} className="instagram social">
+            <Link to={temp2instagramlink} className="instagram social">
             <FaInstagram />
             </Link>
           </div>

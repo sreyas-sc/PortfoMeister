@@ -1,4 +1,143 @@
 
+// // import React, { useState, useEffect } from 'react';
+// // import Template1 from '../template/Template1';
+// // import Template2 from '../template/Template2';
+// // import Template3 from '../template/Template3';
+// // import Template4 from '../template/Template4';
+// // import './PortFolioDesign.scss'; 
+// // import Header from '../Header/Header';
+// // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// // import { faFacebook, faInstagram, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+// // import { useLocation } from 'react-router-dom';
+
+// // const PortFolioDesign = () => {
+// //   const location = useLocation();
+// //   const { selectedTemplate } = location.state || {};
+// //   const [name, setName] = useState('');
+// //   const [email, setEmail] = useState('');
+// //   const [description, setDescription] = useState('');
+// //   const [project, setProject] = useState('');
+// //   const [about, setAbout] = useState('');
+// //   const [image, setImage] = useState(null);
+// //   const [phone, setPhone] = useState(null);
+// //   const [resume, setResume] = useState(null);
+// //   const [address, setAddress] = useState(null);
+// //   const [facebooklink, setFaceBookLink] = useState(null);
+// //   const [instagramlink, setInstagramLink] = useState(null);
+// //   const [twitterlink, setTwitterLink] = useState(null);
+// //   const [githublink, setGitHubLink] = useState(null);
+// //   const [linkedinlink, setLinkedInLink] = useState(null);
+
+
+// //   useEffect(() => {
+// //     // Update state values based on the selected template
+// //     if (selectedTemplate) {
+// //       setName(selectedTemplate.name);
+      
+// //     }
+// //   }, [selectedTemplate]);
+
+
+// //   useEffect(() => {
+// //     // Update state values based on the selected template
+// //     if (selectedTemplate) {
+// //       setName(selectedTemplate.name);
+// //       setEmail(selectedTemplate.email);
+// //       setDescription(selectedTemplate.description);
+// //       setProject(selectedTemplate.project);
+// //       setAbout(selectedTemplate.about);
+// //       setImage(selectedTemplate.image);
+// //       setPhone(selectedTemplate.phone);
+// //       setResume(selectedTemplate.resume);
+// //       setAddress(selectedTemplate.address);
+// //       setFaceBookLink(selectedTemplate.facebooklink);
+// //       setInstagramLink(selectedTemplate.instagramlink);
+// //       setTwitterLink(selectedTemplate.twitterlink);
+// //       setGitHubLink(selectedTemplate.githublink);
+// //       setLinkedInLink(selectedTemplate.linkedinlink);
+// //       // Update other states accordingly
+// //     }
+// //   }, [selectedTemplate]);
+
+
+
+// //   return (
+// //     <div>
+// //       <Header />
+// //       <div className="page-container">
+// //         {/* Left Section with Input Boxes */}
+// //         <div className="left-section">
+// //           <h2 style={{ color: '#ffff', fontFamily: 'Arial, sans-serif', fontStyle: 'italic', fontWeight: 'bold' }}>Input Section</h2>
+// //           <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+// //           <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+// //           <textarea type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
+// //           <textarea type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
+// //           <textarea type="text" placeholder="Project" value={project} onChange={(e) => setProject(e.target.value)} />
+// //           <input type="text" placeholder="About" value={about} onChange={(e) => setAbout(e.target.value)} />
+// //           <input type="text" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+// //           <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
+// //           <input type="file" accept=".pdf" onChange={(e) => setResume(e.target.files[0])} />
+
+// //           {/* Social Links */}
+// //           <div className="social-links">
+// //             <h4>Social Links</h4>
+// //             <div className="social-input">
+// //               <FontAwesomeIcon icon={faFacebook} size="2x" />
+// //               <input type="text" placeholder="Facebook" value={facebooklink} onChange={(e) => setFaceBookLink(e.target.value )} />
+// //             </div>
+// //             <div className="social-input">
+// //               <FontAwesomeIcon icon={faInstagram} size="2x" />
+// //               <input type="text" placeholder="Instagram" value={instagramlink} onChange={(e) => setInstagramLink(e.target.value )} />
+// //             </div>
+// //             <div className="social-input">
+// //               <FontAwesomeIcon icon={faTwitter} size="2x" />
+// //               <input type="text" placeholder="Twitter" value={twitterlink} onChange={(e) => setTwitterLink(e.target.value )} />
+// //             </div>
+// //             <div className="social-input">
+// //               <FontAwesomeIcon icon={faGithub} size="2x" />
+// //               <input type="text" placeholder="GitHub" value={githublink} onChange={(e) => setGitHubLink(e.target.value )} />
+// //             </div>
+// //             <div className="social-input">
+// //               <FontAwesomeIcon icon={faLinkedin} size="2x" />
+// //               <input type="text" placeholder="LinkedIn" value={linkedinlink} onChange={(e) => setLinkedInLink(e.target.value )} />
+// //             </div>
+            
+// //             {/* Repeat similar structure for other social links */}
+// //           </div>
+
+// //           <button >Add to Site</button>
+// //         </div>
+// //         {/* Right Section displaying Template1 */}
+// //         <div className="right-section">
+// //           <h2>Template Preview</h2>
+// //           {selectedTemplate && (
+// //             <>
+// //               {selectedTemplate.id === 1 && (
+// //                 <Template1 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+// //               )}
+// //               {selectedTemplate.id === 2 && (
+// //                 <Template3 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+// //               )}
+// //               {selectedTemplate.id === 3 && (
+// //                 <Template2 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+// //               )}
+// //               {selectedTemplate.id === 4 && (
+// //                 <Template4 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+// //               )}
+// //             </>
+// //           )}
+// //         </div>
+// //       </div>
+// //     </div>
+// //   );
+// // };
+
+// // export default PortFolioDesign;
+// ////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 // import React, { useState, useEffect } from 'react';
 // import Template1 from '../template/Template1';
 // import Template2 from '../template/Template2';
@@ -28,18 +167,22 @@
 //   const [githublink, setGitHubLink] = useState(null);
 //   const [linkedinlink, setLinkedInLink] = useState(null);
 
+//   // State variables for the Fourth section
+//   const [temp4heading, setTemp4Heading] = useState('');
+//   const [temp4description, setTemp4Description] = useState('');
+//   const [image1, setTemp4Image] = useState('');
+//   const [temp4url, setTemp4URL] = useState('');
+
+//   // State variable to determine whether to show the first section or not
+//   const [showFirstSection, setShowFirstSection] = useState(true);
 
 //   useEffect(() => {
-//     // Update state values based on the selected template
 //     if (selectedTemplate) {
 //       setName(selectedTemplate.name);
-      
 //     }
 //   }, [selectedTemplate]);
 
-
 //   useEffect(() => {
-//     // Update state values based on the selected template
 //     if (selectedTemplate) {
 //       setName(selectedTemplate.name);
 //       setEmail(selectedTemplate.email);
@@ -55,59 +198,76 @@
 //       setTwitterLink(selectedTemplate.twitterlink);
 //       setGitHubLink(selectedTemplate.githublink);
 //       setLinkedInLink(selectedTemplate.linkedinlink);
-//       // Update other states accordingly
+//       setTemp4Heading(selectedTemplate.temp4heading);
+//       setTemp4Description(selectedTemplate.temp4description);
+//       setTemp4Image(selectedTemplate.temp4image);
+//       setTemp4URL(selectedTemplate.temp4url);
 //     }
 //   }, [selectedTemplate]);
 
-
+//   useEffect(() => {
+//     // Update the state to determine which section to show/hide
+//     setShowFirstSection(selectedTemplate?.id !== 4);
+//   }, [selectedTemplate]);
 
 //   return (
 //     <div>
 //       <Header />
 //       <div className="page-container">
-//         {/* Left Section with Input Boxes */}
 //         <div className="left-section">
-//           <h2 style={{ color: '#ffff', fontFamily: 'Arial, sans-serif', fontStyle: 'italic', fontWeight: 'bold' }}>Input Section</h2>
-//           <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-//           <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-//           <textarea type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
-//           <textarea type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
-//           <textarea type="text" placeholder="Project" value={project} onChange={(e) => setProject(e.target.value)} />
-//           <input type="text" placeholder="About" value={about} onChange={(e) => setAbout(e.target.value)} />
-//           <input type="text" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
-//           <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
-//           <input type="file" accept=".pdf" onChange={(e) => setResume(e.target.files[0])} />
+//           {showFirstSection && (
+//             <div>
+//               <h2 style={{ color: '#ffff', fontFamily: 'Arial, sans-serif', fontStyle: 'italic', fontWeight: 'bold' }}>Input Section</h2>
+//               <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+//               <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+//               <textarea type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
+//               <textarea type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
+//               <textarea type="text" placeholder="Project" value={project} onChange={(e) => setProject(e.target.value)} />
+//               <input type="text" placeholder="About" value={about} onChange={(e) => setAbout(e.target.value)} />
+//               <input type="text" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+//               <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
+//               <input type="file" accept=".pdf" onChange={(e) => setResume(e.target.files[0])} />
 
-//           {/* Social Links */}
-//           <div className="social-links">
-//             <h4>Social Links</h4>
-//             <div className="social-input">
-//               <FontAwesomeIcon icon={faFacebook} size="2x" />
-//               <input type="text" placeholder="Facebook" value={facebooklink} onChange={(e) => setFaceBookLink(e.target.value )} />
+//               <div className="social-links">
+//                 <h4>Social Links</h4>
+//                 <div className="social-input">
+//                   <FontAwesomeIcon icon={faFacebook} size="2x" />
+//                   <input type="text" placeholder="Facebook" value={facebooklink} onChange={(e) => setFaceBookLink(e.target.value)} />
+//                 </div>
+//                 <div className="social-input">
+//                   <FontAwesomeIcon icon={faInstagram} size="2x" />
+//                   <input type="text" placeholder="Instagram" value={instagramlink} onChange={(e) => setInstagramLink(e.target.value)} />
+//                 </div>
+//                 <div className="social-input">
+//                   <FontAwesomeIcon icon={faTwitter} size="2x" />
+//                   <input type="text" placeholder="Twitter" value={twitterlink} onChange={(e) => setTwitterLink(e.target.value)} />
+//                 </div>
+//                 <div className="social-input">
+//                   <FontAwesomeIcon icon={faGithub} size="2x" />
+//                   <input type="text" placeholder="GitHub" value={githublink} onChange={(e) => setGitHubLink(e.target.value)} />
+//                 </div>
+//                 <div className="social-input">
+//                   <FontAwesomeIcon icon={faLinkedin} size="2x" />
+//                   <input type="text" placeholder="LinkedIn" value={linkedinlink} onChange={(e) => setLinkedInLink(e.target.value)} />
+//                 </div>
+//               </div>
 //             </div>
-//             <div className="social-input">
-//               <FontAwesomeIcon icon={faInstagram} size="2x" />
-//               <input type="text" placeholder="Instagram" value={instagramlink} onChange={(e) => setInstagramLink(e.target.value )} />
-//             </div>
-//             <div className="social-input">
-//               <FontAwesomeIcon icon={faTwitter} size="2x" />
-//               <input type="text" placeholder="Twitter" value={twitterlink} onChange={(e) => setTwitterLink(e.target.value )} />
-//             </div>
-//             <div className="social-input">
-//               <FontAwesomeIcon icon={faGithub} size="2x" />
-//               <input type="text" placeholder="GitHub" value={githublink} onChange={(e) => setGitHubLink(e.target.value )} />
-//             </div>
-//             <div className="social-input">
-//               <FontAwesomeIcon icon={faLinkedin} size="2x" />
-//               <input type="text" placeholder="LinkedIn" value={linkedinlink} onChange={(e) => setLinkedInLink(e.target.value )} />
-//             </div>
-            
-//             {/* Repeat similar structure for other social links */}
-//           </div>
+//           )}
 
-//           <button >Add to Site</button>
+//           {/* Second Section */}
+//           {selectedTemplate && selectedTemplate.id === 4 && (
+//             <div className="second-section">
+//               <h2>E-commerce Portfolio Template</h2>
+//               <input type="text" placeholder="Heading" value={temp4heading} onChange={(e) => setTemp4Heading(e.target.value)} />
+//               <input type="text" placeholder="Description" value={temp4description} onChange={(e) => setTemp4Description(e.target.value)} />
+//               <input type="file" accept="image/*" onChange={(e) => setTemp4Image(e.target.files[0])} />
+//               <input type="text" placeholder="Product URL" value={temp4url} onChange={(e) => setTemp4URL(e.target.value)} />
+//             </div>
+//           )}
+
+//           <button>Add to Site</button>
 //         </div>
-//         {/* Right Section displaying Template1 */}
+
 //         <div className="right-section">
 //           <h2>Template Preview</h2>
 //           {selectedTemplate && (
@@ -122,7 +282,7 @@
 //                 <Template2 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
 //               )}
 //               {selectedTemplate.id === 4 && (
-//                 <Template4 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+//                 <Template4 temp4heading={temp4heading} temp4description={temp4description} temp4url={temp4url} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
 //               )}
 //             </>
 //           )}
@@ -133,8 +293,8 @@
 // };
 
 // export default PortFolioDesign;
-////////////////////////////////////////////////////////////////////////////////////
-
+///////////////////////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//////////////////////////////////////////////////////////////////////\///////////////////////////////////////////////////
 
 
 
@@ -143,7 +303,7 @@ import Template1 from '../template/Template1';
 import Template2 from '../template/Template2';
 import Template3 from '../template/Template3';
 import Template4 from '../template/Template4';
-import './PortFolioDesign.scss'; 
+import './PortFolioDesign.scss';
 import Header from '../Header/Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -167,7 +327,20 @@ const PortFolioDesign = () => {
   const [githublink, setGitHubLink] = useState(null);
   const [linkedinlink, setLinkedInLink] = useState(null);
 
-  // State variables for the second section
+  // State variables for the Third section
+  const [temp2name, setTemp2Name] = useState('');
+  const [temp2maindescription, setTemp2MainDescription] = useState('');
+  const [temp2mainsummary, setTemp2MainSummary] = useState('');
+  const [temp2contactlink, setTemp2ContactLink] = useState('');
+  const [temp2aboutheader, setTemp2AboutHeader] = useState('');
+  const [temp2aboutdescription, setTemp2AboutDescription] = useState('');
+  const [temp2facebooklink, setTemp2FaceBookLink] = useState('');
+  const [temp2instagramlink, setTemp2InstagramLink] = useState('');
+  const [temp2linkedinlink, setTemp2LinkedInLink] = useState('');
+  const [temp2twitterlink, setTemp2TwitterLink] = useState('');
+
+
+  // State variables for the Fourth section
   const [temp4heading, setTemp4Heading] = useState('');
   const [temp4description, setTemp4Description] = useState('');
   const [image1, setTemp4Image] = useState('');
@@ -198,16 +371,30 @@ const PortFolioDesign = () => {
       setTwitterLink(selectedTemplate.twitterlink);
       setGitHubLink(selectedTemplate.githublink);
       setLinkedInLink(selectedTemplate.linkedinlink);
+
+      //updates Template4 specific fields
       setTemp4Heading(selectedTemplate.temp4heading);
       setTemp4Description(selectedTemplate.temp4description);
       setTemp4Image(selectedTemplate.temp4image);
       setTemp4URL(selectedTemplate.temp4url);
+
+      // Update Template2 specific fields
+      setTemp2Name(selectedTemplate.temp2name);
+      setTemp2MainDescription(selectedTemplate.temp2maindescription);
+      setTemp2MainSummary(selectedTemplate.temp2mainsummary);
+      setTemp2ContactLink(selectedTemplate.temp2contactlink);
+      setTemp2AboutHeader(selectedTemplate.temp2aboutheader);
+      setTemp2AboutDescription(selectedTemplate.temp2aboutdescription);
+      setTemp2FaceBookLink(selectedTemplate.temp2facebooklink);
+      setTemp2InstagramLink(selectedTemplate.temp2instagramlink);
+      setTemp2TwitterLink(selectedTemplate.temp2twitterlink);
+      setTemp2LinkedInLink(selectedTemplate.temp2linkedinlink);
     }
   }, [selectedTemplate]);
 
   useEffect(() => {
     // Update the state to determine which section to show/hide
-    setShowFirstSection(selectedTemplate?.id !== 4);
+    setShowFirstSection(selectedTemplate?.id !== 2 && selectedTemplate?.id !== 4);
   }, [selectedTemplate]);
 
   return (
@@ -255,8 +442,42 @@ const PortFolioDesign = () => {
           )}
 
           {/* Second Section */}
+          {selectedTemplate && selectedTemplate.id === 2 && (
+            <div className="third-section">
+              <h2>E-Commerce</h2>
+              <input type="text" placeholder="Name" value={temp2name} onChange={(e) => setTemp2Name(e.target.value)} />
+              <input type="text" placeholder="Main Description" value={temp2maindescription} onChange={(e) => setTemp2MainDescription(e.target.value)} />
+              <input type="text" placeholder="Main Summary" value={temp2mainsummary} onChange={(e) => setTemp2MainSummary(e.target.value)} />
+              <input type="text" placeholder="Contact link" value={temp2contactlink} onChange={(e) => setTemp2ContactLink(e.target.value)} />
+              <input type="text" placeholder="About Header" value={temp2aboutheader} onChange={(e) => setTemp2AboutHeader(e.target.value)} />
+              <input type="text" placeholder="About Description" value={temp2aboutdescription} onChange={(e) => setTemp2AboutDescription(e.target.value)} />
+              
+              <div className="social-links">
+                <h4>Social Links</h4>
+                <div className="social-input">
+                  <FontAwesomeIcon icon={faFacebook} size="2x" />
+                  <input type="text" placeholder="Facebook" value={temp2facebooklink} onChange={(e) => setTemp2FaceBookLink(e.target.value)} />
+                </div>
+                <div className="social-input">
+                  <FontAwesomeIcon icon={faInstagram} size="2x" />
+                  <input type="text" placeholder="Instagram" value={temp2instagramlink} onChange={(e) => setTemp2InstagramLink(e.target.value)} />
+                </div>
+                <div className="social-input">
+                  <FontAwesomeIcon icon={faTwitter} size="2x" />
+                  <input type="text" placeholder="Twitter" value={temp2twitterlink} onChange={(e) => setTemp2TwitterLink(e.target.value)} />
+                </div>
+                <div className="social-input">
+                  <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                  <input type="text" placeholder="LinkedIn" value={temp2linkedinlink} onChange={(e) => setTemp2LinkedInLink(e.target.value)} />
+                </div>
+              </div>
+
+            </div>
+          )}
+
+          {/* Fourth Section */}
           {selectedTemplate && selectedTemplate.id === 4 && (
-            <div className="second-section">
+            <div className="fourth-section">
               <h2>E-commerce Portfolio Template</h2>
               <input type="text" placeholder="Heading" value={temp4heading} onChange={(e) => setTemp4Heading(e.target.value)} />
               <input type="text" placeholder="Description" value={temp4description} onChange={(e) => setTemp4Description(e.target.value)} />
@@ -273,16 +494,87 @@ const PortFolioDesign = () => {
           {selectedTemplate && (
             <>
               {selectedTemplate.id === 1 && (
-                <Template1 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+                <Template1
+                  name={name}
+                  email={email}
+                  project={project}
+                  description={description}
+                  linkedinlink={linkedinlink}
+                  githublink={githublink}
+                  address={address}
+                  about={about}
+                  phone={phone}
+                  image={image}
+                  resume={resume}
+                  facebooklink={facebooklink}
+                  twitterlink={twitterlink}
+                  instagramlink={instagramlink}
+                />
               )}
               {selectedTemplate.id === 2 && (
-                <Template3 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+                <Template3
+                  temp2name={temp2name}
+                  temp2maindescription={temp2maindescription}
+                  temp2mainsummary={temp2mainsummary}
+                  temp2contactlink={temp2contactlink}
+                  temp2aboutdescription={temp2aboutdescription}
+                  temp2aboutheader={temp2aboutheader}
+                  temp2facebooklink={temp2facebooklink}
+                  temp2twitterlink={temp2twitterlink}
+                  temp2instagramlink={temp2instagramlink}
+                  temp2linkedinlink={temp2linkedinlink}
+
+                  name={name}
+                  email={email}
+                  project={project}
+                  description={description}
+                  linkedinlink={linkedinlink}
+                  githublink={githublink}
+                  address={address}
+                  about={about}
+                  phone={phone}
+                  image={image}
+                  resume={resume}
+                  facebooklink={facebooklink}
+                  twitterlink={twitterlink}
+                  instagramlink={instagramlink}
+                />
               )}
               {selectedTemplate.id === 3 && (
-                <Template2 name={name} email={email} project={project} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+                <Template2
+                  name={name}
+                  email={email}
+                  project={project}
+                  description={description}
+                  linkedinlink={linkedinlink}
+                  githublink={githublink}
+                  address={address}
+                  about={about}
+                  phone={phone}
+                  image={image}
+                  resume={resume}
+                  facebooklink={facebooklink}
+                  twitterlink={twitterlink}
+                  instagramlink={instagramlink}
+                />
               )}
               {selectedTemplate.id === 4 && (
-                <Template4 temp4heading={temp4heading} temp4description={temp4description} temp4url={temp4url} description={description} linkedinlink={linkedinlink} githublink={githublink} address={address} about={about} phone={phone} image={image} resume={resume} facebooklink={facebooklink} twitterlink={twitterlink} instagramlink={instagramlink} />
+                <Template4
+                  temp4heading={temp4heading}
+                  temp4description={temp4description}
+                  temp4url={temp4url}
+                  description={description}
+                  linkedinlink={linkedinlink}
+                  githublink={githublink}
+                  address={address}
+                  about={about}
+                  phone={phone}
+                  image={image}
+                  resume={resume}
+                  facebooklink={facebooklink}
+                  twitterlink={twitterlink}
+                  instagramlink={instagramlink}
+                />
               )}
             </>
           )}
