@@ -8,8 +8,22 @@ import { Link } from 'react-router-dom';
 import "./Template1.scss";
 import { Phone } from '@material-ui/icons';
 
-const Template1 = ({ color, click, handleClick, name, description, project, about, address, phone, email, facebooklink, instagramlink, twitterlink, githublink, linkedinlink  }) => {
-   
+const Template1 = ({ color, click, handleClick, name, description, project, about, address, phone, email, facebooklink, instagramlink, twitterlink, githublink, linkedinlink,  project1title, project1description, project1url, project2title, project2description, project2url  }) => {
+  
+  const workInfoData = [
+    {
+      title: project1title,
+      text: project1description,
+      linktoproject: project1url
+    },
+    {
+      // image: DeliveryMeals,
+      title: project2title,
+      text: project2description,
+      linktoproject: project2url
+    },
+  ];
+  
   return (
     <div>
       <div>
@@ -51,15 +65,26 @@ const Template1 = ({ color, click, handleClick, name, description, project, abou
         </div>
       </div>
 
-      <div id="project" className="project">
-        <div className="components">
-          <h1>PROJECTS</h1>
-          <div>
-            <h2>{project}</h2>
-            <p>{project}</p>
-            <p><a href=" ">Click Here!!! </a>to view project details</p>
-          </div>
+      <div className='project'>
+      
+      <section id="project" className="project-section">
+        <h2>PROJECTS</h2>
+        <div className="project-item">
+          {/* <h4>{project}</h4> */}
         </div>
+        <div className="work-section-bottom">
+          {workInfoData.map((data) => (
+            <div className="work-section-info" key={data.title}>
+              <h2>{data.title}</h2>
+              <p>{data.text}</p>
+              <p>{data.linktoproject}</p>
+            </div>
+          ))}
+        </div>
+        <Link to={githublink} className="github social" style={{ textDecoration: 'none' }}>
+        <h4>Click here to View more of my projects from Github</h4><FontAwesomeIcon icon={faGithub} size="2x" style={{ marginRight: '1rem' }} />
+        </Link>
+      </section>
       </div>
 
       <div className="footer">

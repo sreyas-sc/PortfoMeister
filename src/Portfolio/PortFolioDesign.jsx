@@ -297,7 +297,6 @@
 ////////////////////////////////////////////////////////////////////\\\///////////////////////////////////////////////////
 
 
-
 import React, { useState, useEffect } from 'react';
 import Template1 from '../template/Template1';
 import Template2 from '../template/Template2';
@@ -316,6 +315,14 @@ const PortFolioDesign = () => {
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
   const [project, setProject] = useState('');
+  const [project1title, setProject1Title] = useState('');
+  const [project1description, setProject1Description] = useState('');
+  const [project1url, setProject1URL] = useState('');
+  const [project2title, setProject2Title] = useState('');
+  const [project2description, setProject2Description] = useState('');
+  const [project2url, setProject2URL] = useState('');
+
+
   const [about, setAbout] = useState('');
   const [image, setImage] = useState(null);
   const [phone, setPhone] = useState(null);
@@ -361,6 +368,12 @@ const PortFolioDesign = () => {
       setEmail(selectedTemplate.email);
       setDescription(selectedTemplate.description);
       setProject(selectedTemplate.project);
+      setProject1Title(selectedTemplate.project1title);
+      setProject1Description(selectedTemplate.project1description);
+      setProject1URL(selectedTemplate.project1url);
+      setProject2Title(selectedTemplate.project2title);
+      setProject2Description(selectedTemplate.project2description);
+      setProject2URL(selectedTemplate.project2url);
       setAbout(selectedTemplate.about);
       setImage(selectedTemplate.image);
       setPhone(selectedTemplate.phone);
@@ -408,9 +421,20 @@ const PortFolioDesign = () => {
               <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
               <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
               <textarea type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
-              <textarea type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
-              <textarea type="text" placeholder="Project" value={project} onChange={(e) => setProject(e.target.value)} />
               <input type="text" placeholder="About" value={about} onChange={(e) => setAbout(e.target.value)} />
+
+              <textarea type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
+              <h5>Project 1</h5>
+              <input type="text" placeholder="Project 1 Title" value={project1title} onChange={(e) => setProject1Title(e.target.value)} />
+              <textarea type="text" placeholder="Project 1 Description" value={project1description} onChange={(e) => setProject1Description(e.target.value)} />
+              <input type="text" placeholder="Project 1 URL" value={project1url} onChange={(e) => setProject1URL(e.target.value)} />
+              
+              <h5>Project 2</h5>
+              <input type="text" placeholder="Project 2 Title" value={project2title} onChange={(e) => setProject2Title(e.target.value)} />
+              <textarea type="text" placeholder="Project 2 Description" value={project2description} onChange={(e) => setProject2Description(e.target.value)} />
+              <input type="text" placeholder="Project 2 URL" value={project2url} onChange={(e) => setProject2URL(e.target.value)} />
+
+
               <input type="text" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
               <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
               <input type="file" accept=".pdf" onChange={(e) => setResume(e.target.files[0])} />
@@ -498,6 +522,12 @@ const PortFolioDesign = () => {
                   name={name}
                   email={email}
                   project={project}
+                  project1description={project1description}
+                  project1title={project1title}
+                  project1url={project1url}
+                  project2description={project2description}
+                  project2title={project2title}
+                  project2url={project2url}
                   description={description}
                   linkedinlink={linkedinlink}
                   githublink={githublink}

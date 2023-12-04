@@ -55,12 +55,23 @@ body {
   // Add specific styles for each section
 }
 .project{
+  min-height: fit-content;
+  min-height: 100vh;
   background: url("https://wallpapercave.com/dwp2x/wp8930902.jpg")center/cover;
 }
+
+
+.hero{
+  min-height: 100vh;
+  background: #253fa6;
+  background: url("https://wallpapercave.com/dwp2x/wp8930902.jpg")center/cover;
+}
+
 .about {
   background: url('https://wallpapercave.com/dwp2x/wp12917767.jpg') center/cover;
   color: white;
   padding: 20px;
+  min-height: 100vh;
 
   .left {
     h1 {

@@ -14,7 +14,7 @@ function Header() {
         <Link to="/pricing" className="nav-menu-item">Pricing</Link>
         <Link to="/templates" className="nav-menu-item">Templates</Link>
         <Link to="/blog" className="nav-menu-item">Blog</Link>
-        <Link to="/" className="nav-menu-item">Sign In</Link>
+        {/* <Link to="/" className="nav-menu-item">Sign In</Link> */}
         <Link to="/" className="nav-menu-item-signout">Sign Out&nbsp;&nbsp;</Link>
         <Link to="/login" className="nav-menu-item-signouticon"> < LogoutIcon/></Link>
       </div>
