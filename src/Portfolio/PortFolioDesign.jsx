@@ -553,6 +553,12 @@ const PortFolioDesign = () => {
                   temp2twitterlink={temp2twitterlink}
                   temp2instagramlink={temp2instagramlink}
                   temp2linkedinlink={temp2linkedinlink}
+                  project1description={project1description}
+                  project1title={project1title}
+                  project1url={project1url}
+                  project2description={project2description}
+                  project2title={project2title}
+                  project2url={project2url}
 
                   name={name}
                   email={email}
@@ -586,6 +592,13 @@ const PortFolioDesign = () => {
                   facebooklink={facebooklink}
                   twitterlink={twitterlink}
                   instagramlink={instagramlink}
+
+                  project1description={project1description}
+                  project1title={project1title}
+                  project1url={project1url}
+                  project2description={project2description}
+                  project2title={project2title}
+                  project2url={project2url}
                 />
               )}
               {selectedTemplate.id === 4 && (

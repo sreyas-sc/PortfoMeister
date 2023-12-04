@@ -6,7 +6,7 @@ import './Template2.scss';
 import { faFacebook, faInstagram, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 
-const Template2 = ({ name, description, project, about, image,facebooklink, instagramlink, twitterlink, githublink, linkedinlink, email  }) => {
+const Template2 = ({ name, description, project, about, image,facebooklink, instagramlink, twitterlink, githublink, linkedinlink, email, project1title, project1description, project1url, project2title, project2description, project2url  }) => {
   const [isDarkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -15,18 +15,14 @@ const Template2 = ({ name, description, project, about, image,facebooklink, inst
 
   const workInfoData = [
     {
-      // image: PickMeals,
-      title: "Project 1",
-      text:
-      `${project}`, 
-        linktoproject:"click here to view the project"
+      title: project1title,
+      text:project1description,
+      linktoproject: project1url
     },
     {
-      // image: DeliveryMeals,
-      title: "Project 2",
-      text:
-      `${project}`,
-          linktoproject:"click here to view the project"
+      title: project2title,
+      text:project2description,
+      linktoproject: project2url
     },
   ];
 
