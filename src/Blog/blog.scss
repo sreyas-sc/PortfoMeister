@@ -1,4 +1,66 @@
 // Blog.scss
+.blogfooter{
+  margin-top: 100px;
+}
+.blog{
+  background: linear-gradient(rgba(18, 74, 135, 0.878),rgba(88, 173, 139, 0.653)), url("")center;
+  min-height: 210vh ;
+}
+:root {
+  --hs: 225, 100%;
+  --paper: hsl(var(--hs), 25%);
+  --highlight: hsl(var(--hs), 45%);
+  --shadow: hsl(var(--hs), 15%);
+}
+
+.blogp1{
+  font-weight: bold;
+  // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 30px;
+  margin-left: 40px;
+  font-size: 22px;
+}
+
+.blogheader {
+  font-family: "Titillium Web", sans-serif;
+  font-size: clamp(1rem, 5vw + 1rem, 5rem);
+  letter-spacing: 0.1em;
+  display: grid;
+  place-items: center;
+  grid-template-areas: "text";
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-image: linear-gradient(305deg, tomato, gold, cyan);
+  margin: 0;
+
+  & > *,
+  &::after {
+    grid-area: text;
+  }
+
+  &::after {
+    content: attr(data-text);
+    color: var(--paper);
+    transform: translate(0.1em, 0.1em);
+    filter: drop-shadow(0.015em 0.015em 0.025em var(--shadow));
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(var(--highlight), var(--paper));
+  }
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--paper);
+}
+
+
+h1{
+  font-family: 'Bebas Neue', cursive;
+}
 
 .blog-container {
   max-width: 800px;
@@ -36,6 +98,7 @@
       &:hover {
         background-color: #0056b3;
       }
+    
     }
   }
 }
