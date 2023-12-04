@@ -579,6 +579,12 @@ const PortFolioDesign = () => {
               {selectedTemplate.id === 3 && (
                 <Template2
                   name={name}
+                  temp2maindescription={temp2maindescription}
+                  temp2mainsummary={temp2mainsummary}
+                  temp2contactlink={temp2contactlink}
+                  temp2aboutdescription={temp2aboutdescription}
+                  temp2aboutheader={temp2aboutheader}
+                  temp2facebooklink={temp2facebooklink}
                   email={email}
                   project={project}
                   description={description}

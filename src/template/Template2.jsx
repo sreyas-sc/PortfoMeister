@@ -13,18 +13,21 @@ const Template2 = ({ name, description, project, about, image,facebooklink, inst
     setDarkMode(!isDarkMode);
   };
 
-  const workInfoData = [
-    {
-      title: project1title,
-      text:project1description,
-      linktoproject: project1url
-    },
-    {
-      title: project2title,
-      text:project2description,
-      linktoproject: project2url
-    },
-  ];
+  // const workInfoData = [
+  //   { 
+
+  //     // image: "PickMeals",
+  //     head: 'Project 1',
+  //     title: project1title,
+  //     text:  project1description,
+  //   },
+  //   {
+  //     // image: "DeliveryMeals",
+  //     head: 'Project 2',
+  //     title: project2title,
+  //     text:  project1description,
+  //   },
+  // ];
 
   return (
     <div className={`template2-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
@@ -74,17 +77,31 @@ const Template2 = ({ name, description, project, about, image,facebooklink, inst
       </section>
       <section id="project" className="project-section">
         <h2>Projects</h2>
-        <div className="project-item">
-          <h4>{project}</h4>
+        <div className="work-section-bottom">
+          
+            <div className="work-section-info" >
+              {/* <div className="info-boxes-img-container">
+                <img src={data.image} alt="" />
+              </div> */}
+              <h4>Project 1</h4>
+              <h2>{project1title}</h2>
+              <h3>{project1description}</h3>
+              <p>{project1url}</p>
+            </div>
+          
         </div>
         <div className="work-section-bottom">
-          {workInfoData.map((data) => (
-            <div className="work-section-info" key={data.title}>
-              <h2>{data.title}</h2>
-              <p>{data.text}</p>
-              <p>{data.linktoproject}</p>
+          
+            <div className="work-section-info" >
+              {/* <div className="info-boxes-img-container">
+                <img src={data.image} alt="" />
+              </div> */}
+              <h4>Project 2</h4>
+              <h2>{project2title}</h2>
+              <h3>{project2description}</h3>
+              <p>{project2url}</p>
             </div>
-          ))}
+          
         </div>
       </section>
       <footer>
