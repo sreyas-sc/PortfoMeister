@@ -345,6 +345,13 @@ const PortFolioDesign = () => {
   const [temp2instagramlink, setTemp2InstagramLink] = useState('');
   const [temp2linkedinlink, setTemp2LinkedInLink] = useState('');
   const [temp2twitterlink, setTemp2TwitterLink] = useState('');
+  const [temp2whatweofferhead, setTemp2WhatWeOfferHead] = useState('');
+  const [temp2whatweofferdescription, setTemp2WhatWeOfferDescription] = useState(['']);
+  const [temp2highlightscontent1, setTemp2HighLightsContent1] = useState('');
+  const [temp2highlightscontent2, setTemp2HighLightsContent2] = useState('');
+  const [temp2highlightsheading1, setTemp2HighLightsHeading1] = useState('');
+  const [temp2highlightsheading2, setTemp2HighLightsHeading2] = useState('');
+  
 
 
   // State variables for the Fourth section
@@ -402,6 +409,12 @@ const PortFolioDesign = () => {
       setTemp2InstagramLink(selectedTemplate.temp2instagramlink);
       setTemp2TwitterLink(selectedTemplate.temp2twitterlink);
       setTemp2LinkedInLink(selectedTemplate.temp2linkedinlink);
+      setTemp2WhatWeOfferHead(selectedTemplate.temp2whatweofferhead)
+      setTemp2AboutDescription(selectedTemplate.temp2whatweofferdescription)
+      setTemp2HighLightsContent1(selectedTemplate.temp2highlightscontent1)
+      setTemp2HighLightsContent2(selectedTemplate.temp2highlightscontent2)
+      setTemp2HighLightsHeading1(selectedTemplate.temp2highlightsheading1)
+      setTemp2HighLightsHeading2(selectedTemplate.temp2highlightsheading2)
     }
   }, [selectedTemplate]);
 
@@ -475,7 +488,16 @@ const PortFolioDesign = () => {
               <input type="text" placeholder="Contact link" value={temp2contactlink} onChange={(e) => setTemp2ContactLink(e.target.value)} />
               <input type="text" placeholder="About Header" value={temp2aboutheader} onChange={(e) => setTemp2AboutHeader(e.target.value)} />
               <input type="text" placeholder="About Description" value={temp2aboutdescription} onChange={(e) => setTemp2AboutDescription(e.target.value)} />
-              
+              <input type="text" placeholder="What we offer Header" value={temp2whatweofferhead} onChange={(e) => setTemp2WhatWeOfferHead(e.target.value)} />
+              <input type="text" placeholder="What we offer Description" value={temp2whatweofferdescription} onChange={(e) => setTemp2WhatWeOfferDescription(e.target.value)} />
+              <input type="text" placeholder="Highlights heading 1" value={temp2highlightsheading1} onChange={(e) => setTemp2HighLightsHeading1(e.target.value)} />
+              <input type="text" placeholder="Highlights content 1" value={temp2highlightscontent1} onChange={(e) => setTemp2HighLightsContent1(e.target.value)} />
+              <input type="text" placeholder="Highlights heading 2" value={temp2highlightsheading2} onChange={(e) => setTemp2HighLightsHeading2(e.target.value)} />
+              <input type="text" placeholder="Highlights content 1" value={temp2highlightscontent2} onChange={(e) => setTemp2HighLightsContent2(e.target.value)} />
+
+
+
+
               <div className="social-links">
                 <h4>Social Links</h4>
                 <div className="social-input">
@@ -559,6 +581,12 @@ const PortFolioDesign = () => {
                   project2description={project2description}
                   project2title={project2title}
                   project2url={project2url}
+                  temp2whatweofferhead={temp2whatweofferhead}
+                  temp2whatweofferdescription={temp2whatweofferdescription}
+                  temp2highlightscontent1={temp2highlightscontent1}
+                  temp2highlightscontent2={temp2highlightscontent2}
+                  temp2highlightsheading1={temp2highlightsheading1}
+                  temp2highlightsheading2={temp2highlightsheading2}
 
                   name={name}
                   email={email}

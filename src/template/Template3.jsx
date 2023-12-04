@@ -31,20 +31,18 @@ import './Template3.scss';
 import { Link } from 'react-router-dom';
 
 // const Template3 = () => {
-  const Template3 = ({ temp2facebooklink, temp2instagramlink, temp2linkedinlink, temp2twitterlink, temp2name, temp2maindescription, temp2mainsummary, temp2contactlink, temp2aboutdescription, color, click, handleClick,temp2aboutheader, name, description, project, about, address, phone, email, facebooklink, instagramlink, twitterlink, githublink, linkedinlink  }) => {
+  const Template3 = ({ temp2facebooklink, temp2instagramlink, temp2linkedinlink, temp2twitterlink, temp2name, temp2maindescription, temp2mainsummary, temp2contactlink, temp2aboutdescription, color, click, handleClick,temp2aboutheader, name, description, project, about, address, phone, email, facebooklink, instagramlink, twitterlink, githublink, linkedinlink, temp2whatweofferdescription, temp2whatweofferhead, temp2highlightsheading1, temp2highlightsheading2, temp2highlightscontent1, temp2highlightscontent2  }) => {
 
   const workInfoData = [
     {
       image: PickMeals,
-      title: "Pick Meals",
-      text:
-        "Lorem ipsum dolor sit amet consectetur. Maecenas orci et sagittis duis elementum interdum facilisi bibendum.",
-    },
+      title: temp2highlightsheading1,
+      text: temp2highlightscontent1
+         },
     {
       image: DeliveryMeals,
-      title: "Fast Deliveries",
-      text:
-        "Lorem ipsum dolor sit amet consectetur. Maecenas orci et lorem ipsum",
+      title: temp2highlightsheading2,
+      text:  temp2highlightscontent2,
     },
   ];
 
@@ -169,10 +167,9 @@ import { Link } from 'react-router-dom';
       <div className="work-section-wrapper">
         <div className="work-section-top">
           <p className="primary-subheading">What we offer</p>
-          <h1 className="primary-heading">How It Works</h1>
+          <h1 className="primary-heading">{temp2whatweofferhead}</h1>
           <p className="primary-text">
-            Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-            elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+           {temp2whatweofferdescription}
           </p>
         </div>
         <div className="work-section-bottom">
@@ -203,7 +200,7 @@ import { Link } from 'react-router-dom';
       <div className="footer-wrapper">
         <div className="footer-section-one">
           <div className="nav-logo-container" style={{ color: 'Grey', fontFamily: 'Shrikhand, cursive', fontSize: '1rem', margin: 0 }}>
-              <h1>{name}</h1>
+              <h1>{temp2name}</h1>
           </div>
           <div className="footer-icons">
             <Link to={temp2twitterlink} className="twitter social">
