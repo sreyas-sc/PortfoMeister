@@ -307,10 +307,59 @@ import Header from '../Header/Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { useLocation } from 'react-router-dom';
+// import loader from 'sass-loader';
+
+const loadScript = (src)=>{
+  return new Promise((resolve) => {
+    const script =document.createElement('script');
+    script.src = src
+
+    script.onload = () =>{
+      resolve(true)
+    };
+
+    script.onerror = () =>{
+      resolve(true)
+    };
+
+    document.body.appendChild(script)
+  });
+
+};
+
+const displayRazorpay= async (amount)=>{
+  const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js');
+
+  if(!res){
+    alert('You are offline, Failed to load Razorpay');
+    return;
+  }
+
+  const options = {
+    key: "rzp_test_79aimvjGGIKYEa",
+    // key: "rzp_test_QshKjoFtlmmRpF",
+    currency: "INR",
+    amount: amount * 100,
+    name: "Portfomeister",
+
+    handler : function (response){
+      alert(response.razorpay_paymemt_id);
+      alert("payment is successful");
+    },
+    prefill:{
+      name:"portfomeister"
+    }
+    // if(response.razorpay_paymemt_id)if need any backend
+  };
+  const paymenntObject = new window.Razorpay(options)
+  paymenntObject.open()
+}
 
 const PortFolioDesign = () => {
   const location = useLocation();
   const { selectedTemplate } = location.state || {};
+  const [template4price, setTemplate4Price] = useState(100);
+  const [template1price, setTemplate1Price] = useState(400);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
@@ -435,23 +484,18 @@ const PortFolioDesign = () => {
               <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
               <textarea type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
               <input type="text" placeholder="About" value={about} onChange={(e) => setAbout(e.target.value)} />
-
               <textarea type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} />
               <h5>Project 1</h5>
               <input type="text" placeholder="Project 1 Title" value={project1title} onChange={(e) => setProject1Title(e.target.value)} />
               <textarea type="text" placeholder="Project 1 Description" value={project1description} onChange={(e) => setProject1Description(e.target.value)} />
               <input type="text" placeholder="Project 1 URL" value={project1url} onChange={(e) => setProject1URL(e.target.value)} />
-              
               <h5>Project 2</h5>
               <input type="text" placeholder="Project 2 Title" value={project2title} onChange={(e) => setProject2Title(e.target.value)} />
               <textarea type="text" placeholder="Project 2 Description" value={project2description} onChange={(e) => setProject2Description(e.target.value)} />
               <input type="text" placeholder="Project 2 URL" value={project2url} onChange={(e) => setProject2URL(e.target.value)} />
-
-
               <input type="text" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
               <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
               <input type="file" accept=".pdf" onChange={(e) => setResume(e.target.files[0])} />
-
               <div className="social-links">
                 <h4>Social Links</h4>
                 <div className="social-input">
@@ -475,6 +519,7 @@ const PortFolioDesign = () => {
                   <input type="text" placeholder="LinkedIn" value={linkedinlink} onChange={(e) => setLinkedInLink(e.target.value)} />
                 </div>
               </div>
+              <button onClick={() => displayRazorpay(template1price)}>Get Temp 1</button>
             </div>
           )}
 
@@ -494,10 +539,6 @@ const PortFolioDesign = () => {
               <input type="text" placeholder="Highlights content 1" value={temp2highlightscontent1} onChange={(e) => setTemp2HighLightsContent1(e.target.value)} />
               <input type="text" placeholder="Highlights heading 2" value={temp2highlightsheading2} onChange={(e) => setTemp2HighLightsHeading2(e.target.value)} />
               <input type="text" placeholder="Highlights content 1" value={temp2highlightscontent2} onChange={(e) => setTemp2HighLightsContent2(e.target.value)} />
-
-
-
-
               <div className="social-links">
                 <h4>Social Links</h4>
                 <div className="social-input">
@@ -516,6 +557,7 @@ const PortFolioDesign = () => {
                   <FontAwesomeIcon icon={faLinkedin} size="2x" />
                   <input type="text" placeholder="LinkedIn" value={temp2linkedinlink} onChange={(e) => setTemp2LinkedInLink(e.target.value)} />
                 </div>
+                <button>Get Temp 2</button>
               </div>
 
             </div>
@@ -529,10 +571,12 @@ const PortFolioDesign = () => {
               <input type="text" placeholder="Description" value={temp4description} onChange={(e) => setTemp4Description(e.target.value)} />
               <input type="file" accept="image/*" onChange={(e) => setTemp4Image(e.target.files[0])} />
               <input type="text" placeholder="Product URL" value={temp4url} onChange={(e) => setTemp4URL(e.target.value)} />
+              <button onClick={() => displayRazorpay(template4price)}>Get Temp 4</button>
             </div>
+            
           )}
 
-          <button>Add to Site</button>
+          {/* <button>Get it</button> */}
         </div>
 
         <div className="right-section">
