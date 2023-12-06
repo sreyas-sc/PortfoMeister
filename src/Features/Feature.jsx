@@ -1,6 +1,7 @@
 import React from "react";
 import "./Features.scss";
 import Header from "../Header/Header";
+import { NavLink } from "react-router-dom";
 
 function Features() {
   return (
@@ -32,7 +33,9 @@ function Features() {
               Easily create and preview your professional portfolio with our
               intuitive portfolio generator.
             </p>
+            <NavLink to="/blog">
             <button>Learn More</button>
+            </NavLink>
           </div>
           
         </section>

@@ -5,6 +5,23 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
+
+.column.rights {
+  width: 50%; // Adjust as needed
+
+  img {
+    align-items: center;
+    // z-index: 1;
+    margin-top: 70px;
+    margin-left: 600px;
+    max-width: 100%;
+    max-height: 500px; // Set the maximum height for the image
+    width: 150px; // Ensure the image maintains its aspect ratio
+    height: 200px; // Ensure the image maintains its aspect ratio
+    border-radius: 100px; // Add border-radius to make the image rounded
+  }
+}
+
 // Header styles
 .header {
   background-color: lightgrey;

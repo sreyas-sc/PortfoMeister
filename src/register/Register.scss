@@ -1,8 +1,10 @@
-.register{
+.registerApp{
     height: 100vh;
+    width: 1400px;
     /* //to fill the full */
     /* // background-color: #f4ae6c9c; */
     /* //background color */
+    margin-left: -16px;
     background: linear-gradient(rgba(203, 161, 34, 0.582),rgba(13, 79, 101, 0.653)), url("https://wallpapercave.com/dwp2x/wp8448751.jpg")center;
     display: flex;
     /* //center the content */

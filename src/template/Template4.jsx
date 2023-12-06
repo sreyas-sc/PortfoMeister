@@ -8,7 +8,7 @@ import './Template4.scss';
 import prodimg from '../Assets/hero-image.png'
 
 
-const Template4 = ({temp4heading, temp4description,temp4url
+const Template4 = ({temp4heading, temp4description,temp4url, image
 }) => {
   return (
 
@@ -23,9 +23,9 @@ const Template4 = ({temp4heading, temp4description,temp4url
           <a href={temp4url}
             className="secondary-btn"
             style={{ textDecoration: 'none' }} // Remove underline
-            target="_blank"
-            rel="noopener noreferrer"
+            
             >
+            {/* <a href={temp4url}> */}
             <button
               style={{
                 padding: '10px 20px', // Adjust padding for the desired size
@@ -46,7 +46,8 @@ const Template4 = ({temp4heading, temp4description,temp4url
           </div>
         </div>
         <div className="hero-image">
-          <img src={prodimg} alt="hero-image" />
+        {/* <img src={image} /> */}
+        <img src={image && URL.createObjectURL(image)} />
         </div>
     </div>
   );

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import "./Template1.scss";
 import { Phone } from '@material-ui/icons';
 
-const Template1 = ({ color, click, handleClick, name, description, about, address, phone, email, facebooklink, instagramlink, twitterlink, githublink, linkedinlink,  project1title, project1description, project1url, project2title, project2description, project2url  }) => {
+const Template1 = ({ color, image, click, handleClick, name, description, about, address, phone, email, facebooklink, instagramlink, twitterlink, githublink, linkedinlink,  project1title, project1description, project1url, project2title, project2description, project2url  }) => {
   
   // const workInfoData = [
   //   { 
@@ -52,6 +52,9 @@ const Template1 = ({ color, click, handleClick, name, description, about, addres
         <h3 style={{ color: '#ffff', fontFamily: 'Arial, sans-serif', fontStyle: 'italic', fontWeight: 'bold' }}> Hey there I'm </h3>
         <h1>{name}</h1>
         <p>{description}</p>
+        {/* <div className="column rights">
+          <img src={image && URL.createObjectURL(image)} alt=' '/>
+        </div> */}
           <h1> </h1>
         </div>
       </div>
@@ -60,6 +63,7 @@ const Template1 = ({ color, click, handleClick, name, description, about, addres
         <div className="left">
           <h1>ABOUT</h1>
           <p>{about}</p>
+          
           
           <a className="btn" href={resume} target="_blank" rel="noreferrer">
             My Resume

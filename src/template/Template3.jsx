@@ -33,18 +33,20 @@ import { Link } from 'react-router-dom';
 // const Template3 = () => {
   const Template3 = ({ temp2facebooklink, temp2instagramlink, temp2linkedinlink, temp2twitterlink, temp2name, temp2maindescription, temp2mainsummary, temp2contactlink, temp2aboutdescription, color, click, handleClick,temp2aboutheader, name, description, project, about, address, phone, email, facebooklink, instagramlink, twitterlink, githublink, linkedinlink, temp2whatweofferdescription, temp2whatweofferhead, temp2highlightsheading1, temp2highlightsheading2, temp2highlightscontent1, temp2highlightscontent2  }) => {
 
-  const workInfoData = [
-    {
-      image: PickMeals,
-      title: temp2highlightsheading1,
-      text: temp2highlightscontent1
-         },
-    {
-      image: DeliveryMeals,
-      title: temp2highlightsheading2,
-      text:  temp2highlightscontent2,
-    },
-  ];
+  // const workInfoData = [
+  //   {
+      
+  //     // title: temp2highlightsheading1,
+  //     title: "1",
+  //     text: temp2highlightscontent1
+  //        },
+  //   {
+      
+  //     // title: temp2highlightsheading2,
+  //     title: "2",
+  //     text:  temp2highlightscontent2,
+  //   },
+  // ];
 
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -83,7 +85,7 @@ import { Link } from 'react-router-dom';
           <a href="#about">About</a>
           <a href="">Contact</a>
           <a href="#work">Work</a>
-          <button className="primary-button">Call And Book Now</button>
+          {/* <button className="primary-button">Call And Book Now</button> */}
         </div>
         <div className="navbar-menu-container">
           <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
@@ -142,6 +144,7 @@ import { Link } from 'react-router-dom';
           </div>
           <div className="about-section-image-container">
             <img src={AboutBackgroundImage} alt="" />
+            {/* here */}
           </div>
           <div className="about-section-text-container">
             <p className="primary-subheading">About</p>
@@ -173,15 +176,24 @@ import { Link } from 'react-router-dom';
           </p>
         </div>
         <div className="work-section-bottom">
-          {workInfoData.map((data) => (
-            <div className="work-section-info" key={data.title}>
+          
+            <div className="work-section-info">
               {/* <div className="info-boxes-img-container">
                 <img src={data.image} alt="" />
               </div> */}
-              <h2>{data.title}</h2>
-              <p>{data.text}</p>
+              <h2>{temp2highlightsheading1}</h2>
+              <p>{temp2highlightscontent1}</p>
             </div>
-          ))}
+
+            <div className="work-section-info">
+              {/* <div className="info-boxes-img-container">
+                <img src={data.image} alt="" />
+              </div> */}
+              <h2>{temp2highlightsheading2}</h2>
+              <p>{temp2highlightscontent2}</p>
+            </div>
+         
+         
         </div>
       </div>
       </section>
